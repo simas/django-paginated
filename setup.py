@@ -4,7 +4,7 @@ from setuptools import setup
 setup(
     name='django-paginated',
     version='0.1.2',
-    description='Simple django digg-style pagiantion.',
+    description='Simple django digg-style pagination.',
     long_description=open('README.md').read(),
     url='http://github.com/simas/django-paginated',
     author=u'Simas Skrebiškis',
