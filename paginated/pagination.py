@@ -12,7 +12,7 @@ def paginated(queryset, request, per_page=settings.PAGINATED_PER_PAGE):
     paginator = Paginator(queryset, per_page)
 
     try:
-        events = paginator.page(request.GET.get('page', 1))
+        page = paginator.page(request.GET.get('page', 1))
     except PageNotAnInteger:
         raise Http404
     except EmptyPage:
@@ -22,9 +22,9 @@ def paginated(queryset, request, per_page=settings.PAGINATED_PER_PAGE):
         settings.PAGINATED_TEMPLATE,
         paginators.digg_paginator({
             'request': request,
-            'page_obj': events,
+            'page_obj': page,
             'paginator': paginator,
         })
     )
 
-    return events, pagination
+    return page.object_list, pagination
