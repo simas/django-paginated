@@ -1,4 +1,3 @@
-================
 django-paginated
 ================
 
@@ -7,7 +6,7 @@ Installation
 
 ```
 pip install django-paginated
-``
+```
 
 and add `paginated` to project's `INSTALLED_APPS`
 
