@@ -1,5 +1,5 @@
 # coding: utf-8
-from django.conf import settings
+from . import settings
 
 '''
 Based on
