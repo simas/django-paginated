@@ -17,7 +17,7 @@
     {% endfor %}
     {% if not in_trailing_range %}
         <li><span class="ellipsis">...</span></li>
-        {% for p in reversed(pages_outside_leading_range) %}
+        {% for p in pages_outside_leading_range %}
             <li><a href="{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ p }}">{{ p }}</a></li>
         {% endfor %}
     {% endif %}
