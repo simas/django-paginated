@@ -4,8 +4,8 @@ from django.core.paginator import PageNotAnInteger
 from django.http import Http404
 from django.template.loader import render_to_string
 
-from pagination import paginators
-from pagination import settings
+from . import paginators
+from . import settings
 
 
 def paginated(queryset, request, per_page=settings.PAGINATED_PER_PAGE):
@@ -19,7 +19,7 @@ def paginated(queryset, request, per_page=settings.PAGINATED_PER_PAGE):
         raise Http404
 
     pagination = render_to_string(
-        'core/partials/pagination.jinja',
+        settings.PAGINATED_TEMPLATE,
         paginators.digg_paginator({
             'request': request,
             'page_obj': events,

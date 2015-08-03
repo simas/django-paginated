@@ -20,3 +20,6 @@ PAGINATED_NUM_PAGES_OUTSIDE_RANGE = getattr(
 PAGINATED_ADJACENT_PAGES = getattr(
     settings, 'PAGINATED_ADJACENT_PAGES', 4
 )
+PAGINATED_TEMPLATE = getattr(
+    settings, 'PAGINATED_TEMPLATE', 'paginated/pagination.html'
+)
