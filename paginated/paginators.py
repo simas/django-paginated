@@ -82,7 +82,7 @@ def digg_paginator(context):
         'page_range': page_range,
         'in_leading_range': in_leading_range,
         'in_trailing_range': in_trailing_range,
-        'pages_outside_leading_range': reversed(pages_outside_leading_range()),
+        'pages_outside_leading_range': reversed(pages_outside_leading_range),
         'pages_outside_trailing_range': pages_outside_trailing_range,
         'get_params': get_params,
     }
