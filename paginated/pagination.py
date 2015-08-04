@@ -18,15 +18,15 @@ def paginated(queryset, request, per_page=settings.PAGINATED_PER_PAGE):
     except EmptyPage:
         raise Http404
 
-    pagination = render_to_string(
-        settings.PAGINATED_TEMPLATE,
-        paginators.digg_paginator({
-            'request': request,
-            'page_obj': page,
-            'paginator': paginator,
-            'prev_text': settings.PAGINATED_PREV_TEXT,
-            'next_text': settings.PAGINATED_NEXT_TEXT,
-        })
-    )
+    context = paginators.digg_paginator({
+        'request': request,
+        'page_obj': page,
+        'paginator': paginator,
+    })
+    context.update({
+        'prev_text': settings.PAGINATED_PREV_TEXT,
+        'next_text': settings.PAGINATED_NEXT_TEXT,
+    })
+    pagination = render_to_string(settings.PAGINATED_TEMPLATE, context)
 
     return page.object_list, pagination
