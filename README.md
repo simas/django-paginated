@@ -30,7 +30,7 @@ to
 
 ```python
 def events(request):
-    events, pagiantion = paginated(Event.objects.all(), request)
+    events, pagination = paginated(Event.objects.all(), request)
 
     context = {
         'events': events,
