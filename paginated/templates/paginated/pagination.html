@@ -1,6 +1,6 @@
 <div class="pagination">
     {% if has_previous %}
-        <li><a href="{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ previous }}">&laquo; Prev</a></li>
+        <li><a href="{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ previous }}">{{ prev_text|safe }}</a></li>
     {% endif %}
     {% if not in_leading_range %}
         {% for p in pages_outside_trailing_range %}
@@ -22,6 +22,6 @@
         {% endfor %}
     {% endif %}
     {% if has_next %}
-        <li><a href="{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ next }}">Next &raquo;</a></li>
+        <li><a href="{% if get_params %}?{{ get_params }}&{% else %}?{% endif %}page={{ next }}">{{ next_text|safe }}</a></li>
     {% endif %}
 </div>

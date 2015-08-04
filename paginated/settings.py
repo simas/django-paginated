@@ -2,6 +2,12 @@ from django.conf import settings
 
 
 PAGINATED_PER_PAGE = getattr(settings, 'PAGINATED_PER_PAGE', 10)
+PAGINATED_NEXT_TEXT = getattr(
+    settings, 'PAGINATED_NEXT_TEXT', '&laquo;'
+)
+PAGINATED_PREV_TEXT = getattr(
+    settings, 'PAGINATED_PREV_TEXT', '&raquo;'
+)
 PAGINATED_LEADING_PAGE_RANGE_DISPLAYED = getattr(
     settings,'PAGINATED_LEADING_PAGE_RANGE_DISPLAYED', 10
 )

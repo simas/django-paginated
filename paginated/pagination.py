@@ -24,6 +24,8 @@ def paginated(queryset, request, per_page=settings.PAGINATED_PER_PAGE):
             'request': request,
             'page_obj': page,
             'paginator': paginator,
+            'prev_text': settings.PAGINATED_PREV_TEXT,
+            'next_text': settings.PAGINATED_NEXT_TEXT,
         })
     )
 
